@@ -1,6 +1,3 @@
-# 19.01.16
-# 디텍터 3x3 으로 수정
-
  #  *********************************************************************
 #  * DISCLAIMER                                                        *
 #  *                                                                   *
@@ -33,17 +30,17 @@
 # VISUALISATION
 #=====================================================
 
-/vis/disable
+#/vis/disable
 
-#/vis/open                           OGLSX
-#/vis/viewer/set/viewpointThetaPhi   60 60
-#/vis/viewer/zoom                    6.0
-#/vis/drawVolume
-#/tracking/storeTrajectory           1
+/vis/open                           OGLSX
+/vis/viewer/set/viewpointThetaPhi   80 60
+/vis/viewer/zoom                    6.0
+/vis/drawVolume
+/tracking/storeTrajectory           1
 #/vis/scene/add/trajectories 
-#/vis/scene/endOfEventAction         accumulate
+/vis/scene/endOfEventAction         accumulate
 
-#/control/execute                    Verbose.mac
+/control/execute                    Verbose.mac
 
 
 #=====================================================
@@ -84,9 +81,9 @@
 /gate/cylindricalPET/daughters/name           head
 /gate/cylindricalPET/daughters/insert         box
 /gate/head/placement/setTranslation           44.0 0.0 0.0 cm
-/gate/head/geometry/setXLength                9  cm
-/gate/head/geometry/setYLength                33 cm
-/gate/head/geometry/setZLength                39 cm
+/gate/head/geometry/setXLength                8  cm
+/gate/head/geometry/setYLength                32 cm
+/gate/head/geometry/setZLength                40 cm
 /gate/head/setMaterial                        Air
 /gate/head/vis/setVisible                     0
 
@@ -95,9 +92,9 @@
 /gate/head/daughters/name                     block
 /gate/head/daughters/insert                   box
 /gate/block/placement/setTranslation          0.0 0.0 0.0 cm
-/gate/block/geometry/setXLength               3 cm
-/gate/block/geometry/setYLength               11 cm
-/gate/block/geometry/setZLength               13 cm
+/gate/block/geometry/setXLength               30 mm
+/gate/block/geometry/setYLength               16 mm
+/gate/block/geometry/setZLength               20 mm
 /gate/block/setMaterial                       Air
 /gate/block/vis/setVisible                    0
 
@@ -105,9 +102,9 @@
 /gate/block/daughters/name                    crystal
 /gate/block/daughters/insert                  box
 /gate/crystal/placement/setTranslation        0.0 0.0 0.0 cm
-/gate/crystal/geometry/setXLength             3 cm
-/gate/crystal/geometry/setYLength             11 cm
-/gate/crystal/geometry/setZLength             13 cm
+/gate/crystal/geometry/setXLength             30 mm
+/gate/crystal/geometry/setYLength             3.0 mm
+/gate/crystal/geometry/setZLength             3.8 mm
 /gate/crystal/setMaterial                     Air
 /gate/crystal/vis/setVisible                  0
 
@@ -116,43 +113,41 @@
 /gate/crystal/daughters/name                  LSO
 /gate/crystal/daughters/insert                box
 /gate/LSO/placement/setTranslation            -0.75 0.0 0.0 cm
-/gate/LSO/geometry/setXLength                 3 cm
-/gate/LSO/geometry/setYLength                 11 cm
-/gate/LSO/geometry/setZLength                 13 cm
+/gate/LSO/geometry/setXLength                 15 mm
+/gate/LSO/geometry/setYLength                 3.0 mm
+/gate/LSO/geometry/setZLength                 3.8 mm
 /gate/LSO/setMaterial                         LSO
-/gate/LSO/vis/forceSolid
 /gate/LSO/vis/setColor                        red
 
 #	BGO layer
 /gate/crystal/daughters/name                  BGO
 /gate/crystal/daughters/insert                box
 /gate/BGO/placement/setTranslation            +0.75 0.0 0.0 cm
-/gate/BGO/geometry/setXLength                 3 cm
-/gate/BGO/geometry/setYLength                 11 cm
-/gate/BGO/geometry/setZLength                 13 cm
+/gate/BGO/geometry/setXLength                 15 mm
+/gate/BGO/geometry/setYLength                 3.0 mm
+/gate/BGO/geometry/setZLength                 3.8 mm
 /gate/BGO/setMaterial                         BGO
-/gate/BGO/vis/forceSolid
 /gate/BGO/vis/setColor                        yellow
 
 #	R E P E A T    C R Y S T A L
 /gate/crystal/repeaters/insert                cubicArray
 /gate/crystal/cubicArray/setRepeatNumberX     1
-/gate/crystal/cubicArray/setRepeatNumberY     3
-/gate/crystal/cubicArray/setRepeatNumberZ     3
-/gate/crystal/cubicArray/setRepeatVector      0.0 11.0 13.0 mm
+/gate/crystal/cubicArray/setRepeatNumberY     5
+/gate/crystal/cubicArray/setRepeatNumberZ     5
+/gate/crystal/cubicArray/setRepeatVector      0.0 3.2 4.0 mm
 
 
 #	R E P E A T    BLOCK
 /gate/block/repeaters/insert                  cubicArray
 /gate/block/cubicArray/setRepeatNumberX       1
-/gate/block/cubicArray/setRepeatNumberY       3
-/gate/block/cubicArray/setRepeatNumberZ       3
-/gate/block/cubicArray/setRepeatVector        0.0 11.0 13.0 cm
+/gate/block/cubicArray/setRepeatNumberY       20
+/gate/block/cubicArray/setRepeatNumberZ       20
+/gate/block/cubicArray/setRepeatVector        0.0 1.6 2.0 cm
 
 
 #	R E P E A T HEAD
 /gate/head/repeaters/insert                   ring
-/gate/head/ring/setRepeatNumber               6
+/gate/head/ring/setRepeatNumber               4
 
 
 #	A T T A C H    S Y S T E M 
@@ -183,7 +178,7 @@
 
 /gate/phantom/geometry/setRmax             5 cm
 /gate/phantom/geometry/setRmin             0 cm
-/gate/phantom/geometry/setHeight             0.01 mm
+/gate/phantom/geometry/setHeight             1 cm
 /gate/phantom/setMaterial                     Water
 /gate/phantom/vis/forceSolid
 /gate/phantom/vis/setColor                    blue
@@ -314,16 +309,16 @@
 /gate/source/posiC11/gps/maxphi 360. deg 
 
 # type 정의
-#/gate/source/posiC11/gps/type Volume 
+/gate/source/posiC11/gps/type Volume 
 # shape 정의
-#/gate/source/posiC11/gps/shape Cylinder 
-#/gate/source/posiC11/gps/radius 5 cm 
-#/gate/source/posiC11/gps/halfz 0.01 mm
+/gate/source/posiC11/gps/shape Cylinder 
+/gate/source/posiC11/gps/radius 0.5 cm 
+/gate/source/posiC11/gps/halfz 1. mm
 
 # Source의 위치 정의
-/gate/source/posiC11/gps/centre 0. 0. 0. cm
+#/gate/source/posiC11/gps/centre 0. 0. 0. cm
 
-#/gate/source/posiC11/attachTo phantom
+/gate/source/posiC11/attachTo phantom
 
 
 /gate/source/posiC11/visualize red
@@ -367,6 +362,6 @@
 
 /gate/application/setTimeSlice   1 s
 /gate/application/setTimeStart   0   s
-/gate/application/setTimeStop    600 s
+/gate/application/setTimeStop    6 s
 
 /gate/application/startDAQ

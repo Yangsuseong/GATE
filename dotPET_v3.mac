@@ -30,15 +30,15 @@
 # VISUALISATION
 #=====================================================
 
-#/vis/disable
+/vis/disable
 
-/vis/open                           OGLSX
-/vis/viewer/set/viewpointThetaPhi   80 60
-/vis/viewer/zoom                    6.0
-/vis/drawVolume
-/tracking/storeTrajectory           1
+#/vis/open                           OGLSX
+#/vis/viewer/set/viewpointThetaPhi   60 60
+#/vis/viewer/zoom                    6.0
+#/vis/drawVolume
+#/tracking/storeTrajectory           1
 #/vis/scene/add/trajectories 
-/vis/scene/endOfEventAction         accumulate
+#/vis/scene/endOfEventAction         accumulate
 
 /control/execute                    Verbose.mac
 
@@ -147,7 +147,7 @@
 
 #	R E P E A T HEAD
 /gate/head/repeaters/insert                   ring
-/gate/head/ring/setRepeatNumber               4
+/gate/head/ring/setRepeatNumber               6
 
 
 #	A T T A C H    S Y S T E M 
@@ -178,7 +178,7 @@
 
 /gate/phantom/geometry/setRmax             5 cm
 /gate/phantom/geometry/setRmin             0 cm
-/gate/phantom/geometry/setHeight             1 cm
+/gate/phantom/geometry/setHeight             0.01 mm
 /gate/phantom/setMaterial                     Water
 /gate/phantom/vis/forceSolid
 /gate/phantom/vis/setColor                    blue
@@ -312,13 +312,13 @@
 /gate/source/posiC11/gps/type Volume 
 # shape 정의
 /gate/source/posiC11/gps/shape Cylinder 
-/gate/source/posiC11/gps/radius 0.5 cm 
-/gate/source/posiC11/gps/halfz 1. mm
+/gate/source/posiC11/gps/radius 5 cm 
+/gate/source/posiC11/gps/halfz 0.01 mm
 
 # Source의 위치 정의
-#/gate/source/posiC11/gps/centre 0. 0. 0. cm
+/gate/source/posiC11/gps/centre 0. 0. 0. cm
 
-/gate/source/posiC11/attachTo phantom
+#/gate/source/posiC11/attachTo phantom
 
 
 /gate/source/posiC11/visualize red
@@ -362,6 +362,6 @@
 
 /gate/application/setTimeSlice   1 s
 /gate/application/setTimeStart   0   s
-/gate/application/setTimeStop    6 s
+/gate/application/setTimeStop    2 s
 
 /gate/application/startDAQ
