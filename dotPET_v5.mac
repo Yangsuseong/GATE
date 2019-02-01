@@ -169,10 +169,10 @@
 
 /gate/systems/cylindricalPET/describe
 
-/gate/cylindricalPET/moves/insert             orbiting
-/gate/cylindricalPET/orbiting/setSpeed        30 deg/s
-/gate/cylindricalPET/orbiting/setPoint1       0 0 0 cm
-/gate/cylindricalPET/orbiting/setPoint2       0 0 1 cm
+#/gate/cylindricalPET/moves/insert             orbiting
+#/gate/cylindricalPET/orbiting/setSpeed        30 deg/s
+#/gate/cylindricalPET/orbiting/setPoint1       0 0 0 cm
+#/gate/cylindricalPET/orbiting/setPoint2       0 0 1 cm
 
 #=====================================================
 #  P H A N T O M
@@ -353,13 +353,13 @@
 #  R A N D O M   E N G I N E  A N D  S E E D
 #====================================================
 # JamesRandom Ranlux64 MersenneTwister
-/gate/random/setEngineName JamesRandom
-/gate/random/setEngineSeed default
-/gate/random/setEngineSeed auto
-/gate/random/setEngineSeed 123456789
-/gate/random/setEngineSeed default
-/gate/random/resetEngineFrom fileName
-/gate/random/verbose 1
+#/gate/random/setEngineName JamesRandom
+#/gate/random/setEngineSeed default
+#/gate/random/setEngineSeed auto
+#/gate/random/setEngineSeed 123456789
+#/gate/random/setEngineSeed default
+#/gate/random/resetEngineFrom fileName
+#/gate/random/verbose 1
 
 #=====================================================
 #   M E A S U R E M E N T   S E T T I N G S   
