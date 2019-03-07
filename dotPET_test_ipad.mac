@@ -84,9 +84,9 @@
 /gate/cylindricalPET/daughters/name           head
 /gate/cylindricalPET/daughters/insert         box
 /gate/head/placement/setTranslation           44.0 0.0 0.0 cm
-/gate/head/geometry/setXLength                9  cm
-/gate/head/geometry/setYLength                33 cm
-/gate/head/geometry/setZLength                39 cm
+/gate/head/geometry/setXLength                3  cm
+/gate/head/geometry/setYLength                2. mm
+/gate/head/geometry/setZLength                2  mm
 /gate/head/setMaterial                        Air
 /gate/head/vis/setVisible                     0
 
@@ -96,8 +96,8 @@
 /gate/head/daughters/insert                   box
 /gate/block/placement/setTranslation          0.0 0.0 0.0 cm
 /gate/block/geometry/setXLength               3 cm
-/gate/block/geometry/setYLength               11 cm
-/gate/block/geometry/setZLength               13 cm
+/gate/block/geometry/setYLength               2 mm
+/gate/block/geometry/setZLength               2 mm
 /gate/block/setMaterial                       Air
 /gate/block/vis/setVisible                    0
 
@@ -106,8 +106,8 @@
 /gate/block/daughters/insert                  box
 /gate/crystal/placement/setTranslation        0.0 0.0 0.0 cm
 /gate/crystal/geometry/setXLength             3 cm
-/gate/crystal/geometry/setYLength             11 cm
-/gate/crystal/geometry/setZLength             13 cm
+/gate/crystal/geometry/setYLength             2 mm
+/gate/crystal/geometry/setZLength             2 mm
 /gate/crystal/setMaterial                     Air
 /gate/crystal/vis/setVisible                  0
 
@@ -117,8 +117,8 @@
 /gate/crystal/daughters/insert                box
 /gate/LSO/placement/setTranslation            -0.75 0.0 0.0 cm
 /gate/LSO/geometry/setXLength                 1.5 cm
-/gate/LSO/geometry/setYLength                 11 cm
-/gate/LSO/geometry/setZLength                 13 cm
+/gate/LSO/geometry/setYLength                 2 mm
+/gate/LSO/geometry/setZLength                 2 mm
 /gate/LSO/setMaterial                         LSO
 /gate/LSO/vis/forceSolid
 /gate/LSO/vis/setColor                        red
@@ -128,8 +128,8 @@
 /gate/crystal/daughters/insert                box
 /gate/BGO/placement/setTranslation            +0.75 0.0 0.0 cm
 /gate/BGO/geometry/setXLength                 1.5 cm
-/gate/BGO/geometry/setYLength                 11 cm
-/gate/BGO/geometry/setZLength                 13 cm
+/gate/BGO/geometry/setYLength                 2 mm
+/gate/BGO/geometry/setZLength                 2 mm
 /gate/BGO/setMaterial                         BGO
 /gate/BGO/vis/forceSolid
 /gate/BGO/vis/setColor                        yellow
@@ -137,22 +137,22 @@
 #	R E P E A T    C R Y S T A L
 /gate/crystal/repeaters/insert                cubicArray
 /gate/crystal/cubicArray/setRepeatNumberX     1
-/gate/crystal/cubicArray/setRepeatNumberY     3
-/gate/crystal/cubicArray/setRepeatNumberZ     3
-/gate/crystal/cubicArray/setRepeatVector      0.0 11.0 13.0 mm
+/gate/crystal/cubicArray/setRepeatNumberY     1
+/gate/crystal/cubicArray/setRepeatNumberZ     8
+/gate/crystal/cubicArray/setRepeatVector      0.0 0.0 2.0 mm
 
 
 #	R E P E A T    BLOCK
-/gate/block/repeaters/insert                  cubicArray
-/gate/block/cubicArray/setRepeatNumberX       1
-/gate/block/cubicArray/setRepeatNumberY       3
-/gate/block/cubicArray/setRepeatNumberZ       3
-/gate/block/cubicArray/setRepeatVector        0.0 11.0 13.0 cm
+#/gate/block/repeaters/insert                  cubicArray
+#/gate/block/cubicArray/setRepeatNumberX       1
+#/gate/block/cubicArray/setRepeatNumberY       3
+#/gate/block/cubicArray/setRepeatNumberZ       3
+#/gate/block/cubicArray/setRepeatVector        0.0 11.0 13.0 cm
 
 
 #	R E P E A T HEAD
 /gate/head/repeaters/insert                   ring
-/gate/head/ring/setRepeatNumber               6
+/gate/head/ring/setRepeatNumber               128
 
 
 #	A T T A C H    S Y S T E M 
@@ -300,7 +300,7 @@
 /gate/source/posiC11/gps/energytype Mono
 /gate/source/posiC11/gps/monoenergy 0.511 MeV
 
-/gate/source/posiC11/setActivity                               100 becquerel
+/gate/source/posiC11/setActivity                               1000 becquerel
 
 /gate/source/posiC11/setForcedUnstableFlag                     true
 /gate/source/posiC11/setForcedHalfLife                         1223 s
