@@ -86,7 +86,7 @@
 /gate/head/placement/setTranslation           44.0 0.0 0.0 cm
 /gate/head/geometry/setXLength                3  cm
 /gate/head/geometry/setYLength                2. mm
-/gate/head/geometry/setZLength                2  mm
+/gate/head/geometry/setZLength                16  mm
 /gate/head/setMaterial                        Air
 /gate/head/vis/setVisible                     0
 
@@ -135,19 +135,19 @@
 /gate/BGO/vis/setColor                        yellow
 
 #	R E P E A T    C R Y S T A L
-/gate/crystal/repeaters/insert                cubicArray
-/gate/crystal/cubicArray/setRepeatNumberX     1
-/gate/crystal/cubicArray/setRepeatNumberY     1
-/gate/crystal/cubicArray/setRepeatNumberZ     8
-/gate/crystal/cubicArray/setRepeatVector      0.0 0.0 2.0 mm
+#/gate/crystal/repeaters/insert                cubicArray
+#/gate/crystal/cubicArray/setRepeatNumberX     1
+#/gate/crystal/cubicArray/setRepeatNumberY     1
+#/gate/crystal/cubicArray/setRepeatNumberZ     8
+#/gate/crystal/cubicArray/setRepeatVector      0.0 0.0 2.0 mm
 
 
 #	R E P E A T    BLOCK
-#/gate/block/repeaters/insert                  cubicArray
-#/gate/block/cubicArray/setRepeatNumberX       1
-#/gate/block/cubicArray/setRepeatNumberY       3
-#/gate/block/cubicArray/setRepeatNumberZ       3
-#/gate/block/cubicArray/setRepeatVector        0.0 11.0 13.0 cm
+/gate/block/repeaters/insert                  cubicArray
+/gate/block/cubicArray/setRepeatNumberX       1
+/gate/block/cubicArray/setRepeatNumberY       1
+/gate/block/cubicArray/setRepeatNumberZ       8
+/gate/block/cubicArray/setRepeatVector        0.0 0.0 2.0 mm
 
 
 #	R E P E A T HEAD
@@ -224,13 +224,13 @@
 # CUTS
 #=====================================================
 
-/gate/physics/Gamma/SetCutInRegion      LSO 1.0 cm
-/gate/physics/Electron/SetCutInRegion   LSO 1.0 cm
-/gate/physics/Positron/SetCutInRegion   LSO 1.0 cm
+/gate/physics/Gamma/SetCutInRegion      LSO 2.0 mm
+/gate/physics/Electron/SetCutInRegion   LSO 2.0 mm
+/gate/physics/Positron/SetCutInRegion   LSO 2.0 mm
 
-/gate/physics/Gamma/SetCutInRegion      BGO 1.0 cm
-/gate/physics/Electron/SetCutInRegion   BGO 1.0 cm
-/gate/physics/Positron/SetCutInRegion   BGO 1.0 cm
+/gate/physics/Gamma/SetCutInRegion      BGO 2.0 mm
+/gate/physics/Electron/SetCutInRegion   BGO 2.0 mm
+/gate/physics/Positron/SetCutInRegion   BGO 2.0 mm
 
 
 /gate/physics/Gamma/SetCutInRegion      phantom 0.1 mm
